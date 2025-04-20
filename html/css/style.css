@@ -199,28 +199,32 @@
   right: 2px;
   width: 8px;
   height: 8px;
+  background-color: #00ff00;
   border-radius: 50%;
-  background: #7CFC00;
+  animation: pulse 1.5s infinite;
 }
+
 .job-count .count-info {
   display: flex;
   flex-direction: column;
 }
+
 .job-count .count-info .count-number {
+  font-size: 16px;
   font-weight: 700;
-  font-size: 18px;
-  color: white;
 }
+
 .job-count .count-info .job-label {
   font-size: 12px;
-  opacity: 0.8;
-  color: white;
+  color: rgba(255, 255, 255, 0.7);
 }
+
 .job-count.offline .pulse-dot {
-  background: #FF6347;
+  background-color: #ff0000;
 }
+
 .job-count.offline .count-number {
-  opacity: 0.5;
+  color: #ff0000;
 }
 
 .status-hub-container {
@@ -230,86 +234,97 @@
   transform: translateX(-50%);
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 5px;
-  z-index: 90;
-  background: transparent !important;
+  gap: 10px;
+  width: auto;
+  max-width: 100%;
+  z-index: 100;
 }
 
 .status-hub-section {
   display: flex;
   align-items: center;
-  background: rgba(0, 0, 0, 0.3) !important;
-  border-radius: 8px;
-  padding: 5px 10px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  backdrop-filter: blur(5px);
 }
 
 .status-item {
   display: flex;
   align-items: center;
-  margin: 0 12px;
-  position: relative;
-  min-width: 40px;
-  padding: 5px 0;
-  background: transparent !important;
+  justify-content: center;
+  min-width: 55px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  background: rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
 }
+
 .status-item i {
-  font-size: 18px;
-  margin-right: 10px;
-  width: 20px;
-  text-align: center;
+  margin-right: 5px;
+  font-size: 14px;
+  color: white;
 }
+
 .status-item i.fa-heart {
-  color: #FF6347;
+  color: #ff0000;
 }
+
 .status-item i.fa-tint {
   color: #4169E1;
 }
+
 .status-item i.fa-shield-alt {
   color: #7CFC00;
 }
+
 .status-item i.fa-bolt {
   color: #FFD700;
 }
+
 .status-item .status-value, .status-item .status-text {
   font-size: 14px;
   font-weight: 700;
   color: white;
-  min-width: 30px;
   text-align: center;
-  padding: 2px 5px;
-  border-radius: 15px;
-  background: transparent !important;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  letter-spacing: 0.5px;
 }
+
 .status-item .status-text {
-  max-width: 80px;
+  font-size: 12px;
+  font-weight: 500;
+  max-width: 100px;
+  white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  white-space: nowrap;
-  padding: 2px 8px;
 }
+
 .status-item .unit {
   font-size: 10px;
-  color: white;
-  margin-left: 3px;
+  margin-left: 2px;
+  color: rgba(255, 255, 255, 0.7);
 }
+
 .status-item.low i {
   color: #ffa500;
 }
+
 .status-item.critical i, .status-item.critical .status-value {
   color: #ff0000;
   animation: pulse 1s infinite;
 }
 
 .vehicle-stats {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    padding: 5px 10px;
-    border-radius: 8px;
-    background: rgba(0, 0, 0, 0.3) !important;
-    border: 1px solid rgba(255, 255, 255, 0.2);
+  display: none;
+  position: fixed;
+  bottom: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+  flex-direction: row;
+  gap: 10px;
+  z-index: 100;
 }
 
 .vehicle-stats.active {
@@ -319,38 +334,38 @@
 .vehicle-stats .status-hub-section {
   display: flex;
   align-items: center;
-  background: rgba(0, 0, 0, 0.3) !important;
-  border-radius: 8px;
-  padding: 5px 10px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  justify-content: center;
+  gap: 10px;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+  padding: 5px;
 }
 
 .vehicle-stats .status-item {
   display: flex;
   align-items: center;
-  margin: 0 12px;
-  position: relative;
-  min-width: 40px;
-  padding: 5px 0;
-  background: transparent !important;
+  justify-content: center;
+  min-width: 50px;
+  padding: 3px 8px;
+  border-radius: 5px;
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .vehicle-stats .status-item i {
-  font-size: 18px;
-  margin-right: 10px;
-  width: 20px;
-  text-align: center;
+  margin-right: 5px;
+  font-size: 12px;
+  color: white;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
 }
 
 .vehicle-stats .status-item .status-value {
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 700;
   color: white;
-  min-width: 30px;
   text-align: center;
-  padding: 2px 5px;
-  border-radius: 15px;
-  background: transparent !important;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
+  letter-spacing: 0.5px;
 }
 
 .controls-guide {
@@ -360,228 +375,218 @@
   transform: translateY(-50%);
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  z-index: 90;
-  width: 180px;
-  background: transparent !important;
+  gap: 5px;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+  padding: 10px;
+  z-index: 100;
+  backdrop-filter: blur(5px);
 }
 
 .guide-item {
   display: flex;
   align-items: center;
-  gap: 10px;
-  background: transparent !important;
+  margin-bottom: 5px;
 }
+
 .guide-item .key-button {
-  width: 30px;
-  height: 30px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 5px;
-  background: rgba(0, 0, 0, 0.3) !important;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  font-weight: 500;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 700;
   color: white;
+  min-width: 30px;
+  text-align: center;
+  margin-right: 8px;
 }
+
 .guide-item .key-action {
-  font-size: 14px;
-  opacity: 0.8;
-  color: rgb(255, 255, 255);
+  font-size: 12px;
+  color: white;
+  text-transform: lowercase;
 }
 
 @media (max-height: 600px) {
   .controls-guide {
-    transform: translateY(-50%) scale(0.9);
-    transform-origin: left center;
+    top: unset;
+    bottom: 20px;
+    transform: none;
   }
 }
 
 @media (max-width: 768px) {
   .status-hub-section {
-    padding: 6px 15px;
+    gap: 5px;
   }
   .status-item {
-    margin: 0 8px;
+    padding: 3px 6px;
   }
   .status-value, .status-text {
     font-size: 12px;
   }
 }
 
-/*# sourceMappingURL=style.css.map */
-
-/* Speed Icon */
-#speed-status i {
-    color: #00ff00; /* Xanh lá - GTA 5 Speedometer */
-}
-
-/* Fuel Icon */
-#fuel-status i {
-    color: #ffa500; /* Cam - GTA 5 Fuel */
-}
-
-/* Engine Health Icon */
-#engine-health i {
-    color: #ff0000; /* Đỏ - GTA 5 Engine */
-}
-
-/* Body Health Icon */
-#body-health i {
-    color: #4169e1; /* Xanh dương - GTA 5 Body */
-}
-
 @keyframes pulse {
-    0% { opacity: 1; }
-    50% { opacity: 0.5; }
-    100% { opacity: 1; }
+  0% { opacity: 1; }
+  50% { opacity: 0.5; }
+  100% { opacity: 1; }
 }
 
-/* Status Hub Icons */
+#speed-status i {
+  color: #00ff00;
+}
+
+#fuel-status i {
+  color: #ffa500;
+}
+
+#engine-health i {
+  color: #ff0000;
+}
+
+#body-health i {
+  color: #4169e1;
+}
+
 #player-id i {
-    color: #FFD700; /* Vàng - ID */
+  color: #FFD700;
 }
 
 #food-status i {
-    color: #FF6347; /* Đỏ cam - Đồ ăn */
+  color: #FF6347;
 }
 
 #water-status i {
-    color: #4169E1; /* Xanh dương - Nước */
+  color: #4169E1;
 }
 
 #armor-status i {
-    color: #7CFC00; /* Xanh lá - Giáp */
+  color: #7CFC00;
 }
 
 #ammo-status i {
-    color: #FF0000; /* Đỏ - Đạn */
+  color: #FF0000;
 }
 
-/* Vehicle Stats Icons */
 #speed-status i {
-    color: #00ff00; /* Xanh lá - Tốc độ */
+  color: #00ff00;
 }
 
 #fuel-status i {
-    color: #ffa500; /* Cam - Nhiên liệu */
+  color: #ffa500;
 }
 
 #engine-health i {
-    color: #ff0000; /* Đỏ - Động cơ */
+  color: #ff0000;
 }
 
 #body-health i {
-    color: #4169e1; /* Xanh dương - Thân vỏ */
+  color: #4169e1;
 }
 
-/* Seatbelt Status Icon */
 #seatbelt-status i {
-    color: #ffff00; /* Vàng - Dây an toàn */
+  color: #ffff00;
 }
 
 #seatbelt-status.on .status-value {
-    color: #00ff00; /* Xanh lá khi dây an toàn được cài */
+  color: #00ff00;
 }
 
 #seatbelt-status.off .status-value {
-    color: #ff0000; /* Đỏ khi dây an toàn không được cài */
+  color: #ff0000;
 }
 
-/* Warning States */
 .status-item.low i {
-    color: #ffa500; /* Cam khi thấp */
+  color: #ffa500;
 }
 
 .status-item.critical i, .status-item.critical .status-value {
-    color: #ff0000; /* Đỏ khi nguy hiểm */
-    animation: pulse 1s infinite;
+  color: #ff0000;
 }
 
 @keyframes pulse {
-    0% { opacity: 1; }
-    50% { opacity: 0.5; }
-    100% { opacity: 1; }
+  0% { opacity: 1; }
+  50% { opacity: 0.5; }
+  100% { opacity: 1; }
 }
 
-/* Player HUD Icons */
 .hud-line .line-icon {
-    color: #FFD700; /* Vàng - Icon chung */
+  color: #FFD700;
 }
 
 .player-info .line-icon {
-    color: #4169E1; /* Xanh dương - Icon người chơi */
+  color: #4169E1;
 }
 
 .money-line .line-icon {
-    color: #7CFC00; /* Xanh lá - Icon tiền */
+  color: #7CFC00;
 }
 
 #black-money .line-icon {
-    color: #FF0000; /* Đỏ - Icon tiền đen */
+  color: #FF0000;
 }
 
 .job-icon i {
-    color: #FF6347; /* Đỏ cam - Icon công việc */
+  color: #FF6347;
 }
 
 .job-count .job-icon i {
-    color: #FFD700; /* Vàng - Icon đếm công việc */
+  color: #FFD700;
 }
 
 .job-count.police .job-icon i {
-    color: #4169E1; /* Xanh dương - Icon cảnh sát */
+  color: #4169E1;
 }
 
 .job-count.medic .job-icon i {
-    color: #FF6347; /* Đỏ cam - Icon y tế */
+  color: #FF6347;
 }
 
 .job-count.mechanic .job-icon i {
-    color: #FFD700; /* Vàng - Icon thợ máy */
+  color: #FFD700;
 }
 
-
 .time-date-box {
+  position: fixed;
+  top: 10px;
+  left: 20px;
   display: flex;
   align-items: center;
-  padding: 5px 10px;
-  background: rgba(0, 0, 0, 0.7);
+  gap: 10px;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 8px 15px;
   border-radius: 5px;
-  margin: 5px;
-  color: #fff;
-  font-family: 'Chakra Petch', sans-serif;
 }
 
 .time-date-box .time,
 .time-date-box .date {
-  display: flex;
-  align-items: center;
-  margin-right: 10px;
+  font-size: 16px;
+  font-weight: 700;
+  color: white;
 }
 
 .time-date-box i {
-  margin-right: 5px;
-  color: #fff;
+  font-size: 18px;
+  color: #FFD700;
 }
 
 .time-date-box span {
-  font-size: 0.9em;
-  font-weight: 500;
-} 
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.7);
+}
 
 .job-count.time {
-  background: rgba(0, 0, 0, 0.7);
+  border-color: #FFD700;
 }
 
 .job-count.time .count-info {
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+  flex-direction: row;
+  gap: 10px;
 }
 
 .job-count.time .count-number {
-  font-size: 0.9em;
-  color: #fff;
-  margin: 1px 0;
+  font-weight: 700;
 }
