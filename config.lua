@@ -38,7 +38,7 @@ Config.Money = {
 
 Config.Jobs = {
     Enable = true,
-    MaxJobs = 2
+    MaxJobs = 2  
 }
 
 Config.Status = {
