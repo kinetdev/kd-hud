@@ -1,17 +1,3 @@
-
--- '   ___  ____    _____   ____  _____   ________   _________     ______     ________   ____   __ __   '
--- '  |_  ||_  _|  |_   _| |_   \|_   _| |_   __  | |  _   _  |   |_   _ `.  |_   __  | |_  _| |_  _|   '
--- '    || |/ /      | |     |   \ | |     | |_ \_| |_/ | | \_|     | | `. \   | |_ \_|   \ \   / /     '
--- '    |  __'.      | |     | |\ \| |     |  _| _      | |         | |  | |   |  _| _     \ \ / /      '    
--- '   _| |  \ \_   _| |_   _| |_\   |_   _| |__/ |    _| |_       _| |_.' /  _| |__/ |     \ ' /'      '   
--- '  |____||____| |_____| |_____|\____| |________|   |_____|     |______.'  |________|      \_/'       '   
--- '                                    
--- '                            Discord: https://discord.gg/kinetdev          
--- '                            Website: https://kinetdev.com                 
--- '                            CFG Docs: https://docs.kinetdev.com           
-
-
--- ESX initialization
 ESX = exports["es_extended"]:getSharedObject()
 
 AddEventHandler('onResourceStart', function(resourceName)
