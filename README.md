@@ -76,7 +76,7 @@ Nếu bạn muốn thay đổi bố cục, chỉnh sửa cấu trúc HTML trong 
 
 - Discord: [KinetDev Discord](https://discord.com/invite/UgGdpFz2hF)
 - Website: [KinetDev](https://kinetdev.com/)
-- Tài liệu: [KinetDev Docs](https://docs.kinetdev.com/)
+- Tài liệu: [KinetDev Docs](https://kinetdev.gitbook.io/shop)
 
 ## Giấy phép
 
