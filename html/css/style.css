@@ -1,0 +1,587 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Chakra Petch", sans-serif;
+  color: white;
+}
+
+#player-hud {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: none;
+}
+
+.hud-container {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 300px;
+  color: white;
+}
+
+.server-logo {
+  position: fixed;
+  top: 10px;
+  right: 20px;
+  z-index: 10;
+}
+.server-logo img {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  border: 2px solid rgba(255, 255, 255, 0.7);
+  object-fit: contain;
+}
+
+.hud-line {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 8px 10px;
+  border-radius: 5px;
+  background: rgba(0, 0, 0, 0.3) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+.hud-line .line-icon {
+  margin-right: 10px;
+  width: 24px;
+  text-align: center;
+  font-size: 16px;
+  color: #FFD700;
+}
+
+.player-info {
+  width: 240px;
+  font-weight: 500;
+}
+.player-info #player-name {
+  font-weight: 700;
+  color: white;
+  letter-spacing: 0.5px;
+  max-width: 230px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.jobs {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 8px 10px;
+  border-radius: 5px;
+  background: rgba(0, 0, 0, 0.3) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.jobs .job-container {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.jobs .job-icon {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFD700;
+  margin: 0;
+  flex-shrink: 0;
+}
+
+.jobs #job1,
+.jobs #job2 {
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  color: white;
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex: 1;
+}
+
+.money-line {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 150px;
+  margin-left: auto;
+  background: rgba(0, 0, 0, 0.3) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 8px 10px;
+  border-radius: 5px;
+}
+.money-line:nth-child(3) {
+  border-color: #7CFC00;
+}
+.money-line:nth-child(4) {
+  border-color: #4169E1;
+}
+.money-line:nth-child(5) {
+  border-color: #FF6347;
+}
+.money-line .money-value {
+  font-weight: 700;
+  text-align: right;
+  margin-left: auto;
+  letter-spacing: 1px;
+  color: white;
+}
+.money-line #money {
+  color: white;
+}
+.money-line #bank {
+  color: white;
+}
+.money-line #black-money {
+  color: white;
+}
+
+.job-count-container {
+  position: fixed;
+  bottom: 20px;
+  right: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  z-index: 90;
+  background: transparent !important;
+}
+
+.job-count {
+  display: flex;
+  align-items: center;
+  padding: 4px 12px;
+  border-radius: 5px;
+  background: rgba(0, 0, 0, 0.3) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+.job-count.police {
+  border-color: #4169E1;
+}
+.job-count.medic {
+  border-color: #FF6347;
+}
+.job-count.mechanic {
+  border-color: #FFD700;
+}
+.job-count .job-icon {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+.job-count .job-icon i {
+  font-size: 16px;
+  color: #FFD700;
+}
+.job-count.police .job-icon i {
+  color: #4169E1;
+}
+.job-count.medic .job-icon i {
+  color: #FF6347;
+}
+.job-count.mechanic .job-icon i {
+  color: #FFD700;
+}
+.job-count .job-icon .pulse-dot {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #7CFC00;
+}
+.job-count .count-info {
+  display: flex;
+  flex-direction: column;
+}
+.job-count .count-info .count-number {
+  font-weight: 700;
+  font-size: 18px;
+  color: white;
+}
+.job-count .count-info .job-label {
+  font-size: 12px;
+  opacity: 0.8;
+  color: white;
+}
+.job-count.offline .pulse-dot {
+  background: #FF6347;
+}
+.job-count.offline .count-number {
+  opacity: 0.5;
+}
+
+.status-hub-container {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  z-index: 90;
+  background: transparent !important;
+}
+
+.status-hub-section {
+  display: flex;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.3) !important;
+  border-radius: 8px;
+  padding: 5px 10px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.status-item {
+  display: flex;
+  align-items: center;
+  margin: 0 12px;
+  position: relative;
+  min-width: 40px;
+  padding: 5px 0;
+  background: transparent !important;
+}
+.status-item i {
+  font-size: 18px;
+  margin-right: 10px;
+  width: 20px;
+  text-align: center;
+}
+.status-item i.fa-heart {
+  color: #FF6347;
+}
+.status-item i.fa-tint {
+  color: #4169E1;
+}
+.status-item i.fa-shield-alt {
+  color: #7CFC00;
+}
+.status-item i.fa-bolt {
+  color: #FFD700;
+}
+.status-item .status-value, .status-item .status-text {
+  font-size: 14px;
+  font-weight: 700;
+  color: white;
+  min-width: 30px;
+  text-align: center;
+  padding: 2px 5px;
+  border-radius: 15px;
+  background: transparent !important;
+}
+.status-item .status-text {
+  max-width: 80px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding: 2px 8px;
+}
+.status-item .unit {
+  font-size: 10px;
+  color: white;
+  margin-left: 3px;
+}
+.status-item.low i {
+  color: #ffa500;
+}
+.status-item.critical i, .status-item.critical .status-value {
+  color: #ff0000;
+  animation: pulse 1s infinite;
+}
+
+.vehicle-stats {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 5px 10px;
+    border-radius: 8px;
+    background: rgba(0, 0, 0, 0.3) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.vehicle-stats.active {
+  display: flex;
+}
+
+.vehicle-stats .status-hub-section {
+  display: flex;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.3) !important;
+  border-radius: 8px;
+  padding: 5px 10px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.vehicle-stats .status-item {
+  display: flex;
+  align-items: center;
+  margin: 0 12px;
+  position: relative;
+  min-width: 40px;
+  padding: 5px 0;
+  background: transparent !important;
+}
+
+.vehicle-stats .status-item i {
+  font-size: 18px;
+  margin-right: 10px;
+  width: 20px;
+  text-align: center;
+}
+
+.vehicle-stats .status-item .status-value {
+  font-size: 14px;
+  font-weight: 700;
+  color: white;
+  min-width: 30px;
+  text-align: center;
+  padding: 2px 5px;
+  border-radius: 15px;
+  background: transparent !important;
+}
+
+.controls-guide {
+  position: fixed;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 90;
+  width: 180px;
+  background: transparent !important;
+}
+
+.guide-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: transparent !important;
+}
+.guide-item .key-button {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  background: rgba(0, 0, 0, 0.3) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  font-weight: 500;
+  color: white;
+}
+.guide-item .key-action {
+  font-size: 14px;
+  opacity: 0.8;
+  color: rgb(255, 255, 255);
+}
+
+@media (max-height: 600px) {
+  .controls-guide {
+    transform: translateY(-50%) scale(0.9);
+    transform-origin: left center;
+  }
+}
+
+@media (max-width: 768px) {
+  .status-hub-section {
+    padding: 6px 15px;
+  }
+  .status-item {
+    margin: 0 8px;
+  }
+  .status-value, .status-text {
+    font-size: 12px;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
+
+/* Speed Icon */
+#speed-status i {
+    color: #00ff00; /* Xanh lá - GTA 5 Speedometer */
+}
+
+/* Fuel Icon */
+#fuel-status i {
+    color: #ffa500; /* Cam - GTA 5 Fuel */
+}
+
+/* Engine Health Icon */
+#engine-health i {
+    color: #ff0000; /* Đỏ - GTA 5 Engine */
+}
+
+/* Body Health Icon */
+#body-health i {
+    color: #4169e1; /* Xanh dương - GTA 5 Body */
+}
+
+@keyframes pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1; }
+}
+
+/* Status Hub Icons */
+#player-id i {
+    color: #FFD700; /* Vàng - ID */
+}
+
+#food-status i {
+    color: #FF6347; /* Đỏ cam - Đồ ăn */
+}
+
+#water-status i {
+    color: #4169E1; /* Xanh dương - Nước */
+}
+
+#armor-status i {
+    color: #7CFC00; /* Xanh lá - Giáp */
+}
+
+#ammo-status i {
+    color: #FF0000; /* Đỏ - Đạn */
+}
+
+/* Vehicle Stats Icons */
+#speed-status i {
+    color: #00ff00; /* Xanh lá - Tốc độ */
+}
+
+#fuel-status i {
+    color: #ffa500; /* Cam - Nhiên liệu */
+}
+
+#engine-health i {
+    color: #ff0000; /* Đỏ - Động cơ */
+}
+
+#body-health i {
+    color: #4169e1; /* Xanh dương - Thân vỏ */
+}
+
+/* Seatbelt Status Icon */
+#seatbelt-status i {
+    color: #ffff00; /* Vàng - Dây an toàn */
+}
+
+#seatbelt-status.on .status-value {
+    color: #00ff00; /* Xanh lá khi dây an toàn được cài */
+}
+
+#seatbelt-status.off .status-value {
+    color: #ff0000; /* Đỏ khi dây an toàn không được cài */
+}
+
+/* Warning States */
+.status-item.low i {
+    color: #ffa500; /* Cam khi thấp */
+}
+
+.status-item.critical i, .status-item.critical .status-value {
+    color: #ff0000; /* Đỏ khi nguy hiểm */
+    animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1; }
+}
+
+/* Player HUD Icons */
+.hud-line .line-icon {
+    color: #FFD700; /* Vàng - Icon chung */
+}
+
+.player-info .line-icon {
+    color: #4169E1; /* Xanh dương - Icon người chơi */
+}
+
+.money-line .line-icon {
+    color: #7CFC00; /* Xanh lá - Icon tiền */
+}
+
+#black-money .line-icon {
+    color: #FF0000; /* Đỏ - Icon tiền đen */
+}
+
+.job-icon i {
+    color: #FF6347; /* Đỏ cam - Icon công việc */
+}
+
+.job-count .job-icon i {
+    color: #FFD700; /* Vàng - Icon đếm công việc */
+}
+
+.job-count.police .job-icon i {
+    color: #4169E1; /* Xanh dương - Icon cảnh sát */
+}
+
+.job-count.medic .job-icon i {
+    color: #FF6347; /* Đỏ cam - Icon y tế */
+}
+
+.job-count.mechanic .job-icon i {
+    color: #FFD700; /* Vàng - Icon thợ máy */
+}
+
+
+.time-date-box {
+  display: flex;
+  align-items: center;
+  padding: 5px 10px;
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 5px;
+  margin: 5px;
+  color: #fff;
+  font-family: 'Chakra Petch', sans-serif;
+}
+
+.time-date-box .time,
+.time-date-box .date {
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+}
+
+.time-date-box i {
+  margin-right: 5px;
+  color: #fff;
+}
+
+.time-date-box span {
+  font-size: 0.9em;
+  font-weight: 500;
+} 
+
+.job-count.time {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.job-count.time .count-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.job-count.time .count-number {
+  font-size: 0.9em;
+  color: #fff;
+  margin: 1px 0;
+}

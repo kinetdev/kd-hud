@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/script.js"></script>
+</head>
+<body>
+    <div id="player-hud">
+        <div class="hud-container">
+            <div class="server-logo">
+                <div class="logo-glow"></div>
+                <img src="img/logo.png" alt="Server Logo">
+            </div>
+            
+            <!-- Line 1: Player Name, Time, Date -->
+            <div class="hud-line player-info">
+                <i class="fas fa-user line-icon pulse-icon"></i>
+                <span id="player-name">Loading...</span>
+            </div>
+            
+           <!-- Line 2: Jobs -->
+            <div class="jobs">
+
+                <div class="job-container">
+                    <div class="job-icon">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <span id="job1">Unemployed</span>
+                </div>
+
+                <div class="job-container">
+                    <div class="job-icon">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <span id="job2">None</span>
+                </div>
+
+            </div>
+
+            <!-- Line 3: Money -->
+            <div class="hud-line money-line">
+                <i class="fas fa-wallet line-icon"></i>
+                <span id="money" class="money-value">$0</span>
+            </div>
+            
+            <!-- Line 4: Bank -->
+            <div class="hud-line money-line">
+                <i class="fas fa-university line-icon"></i>
+                <span id="bank" class="money-value">$0</span>
+            </div>
+            
+            <!-- Line 5: Dirty Money -->
+            <div class="hud-line money-line">
+                <i class="fas fa-skull line-icon"></i>
+                <span id="black-money" class="money-value">$0</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="job-count-container">
+
+
+        <!-- Police Officers -->
+        <div class="job-count police">
+            <div class="job-icon">
+                <i class="fas fa-shield-alt"></i>
+            </div>
+            <div class="count-info">
+                <span class="count-number">0</span>
+            </div>
+        </div>
+        
+        <!-- Medics/Doctors -->
+        <div class="job-count medic">
+            <div class="job-icon">
+                <i class="fas fa-ambulance"></i>
+            </div>
+            <div class="count-info">
+                <span class="count-number">0</span>
+            </div>
+        </div>
+        
+        <!-- Mechanics -->
+        <div class="job-count mechanic">
+            <div class="job-icon">
+                <i class="fas fa-wrench"></i>
+            </div>
+            <div class="count-info">
+                <span class="count-number">0</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Status Hub - Bottom center -->
+    <div class="status-hub-container">
+        <!-- Basic Stats Section -->
+        <div class="status-hub-section">
+            <!-- ID -->
+            <div class="status-item" id="player-id">
+                <i class="fas fa-id-card"></i>
+                <span class="status-value">0</span>
+            </div>
+            
+            <!-- Food Status -->
+            <div class="status-item" id="food-status">
+                <i class="fas fa-utensils"></i>
+                <span class="status-value">100%</span>
+            </div>
+            
+            <!-- Water/Thirst Status -->
+            <div class="status-item" id="water-status">
+                <i class="fas fa-tint"></i>
+                <span class="status-value">100%</span>
+            </div>
+            
+            <!-- Armor Status -->
+            <div class="status-item" id="armor-status">
+                <i class="fas fa-shield-alt"></i>
+                <span class="status-value">0%</span>
+            </div>
+            
+            <!-- Location -->
+            <!-- <div class="status-item location" id="location-status">
+                <i class="fas fa-map-marker-alt"></i>
+                <span class="status-text">Loading...</span>
+            </div> -->
+            
+            <!-- Ammo -->
+            <div class="status-item" id="ammo-status">
+                <i class="fas fa-gun"></i>
+                <span class="status-value">0</span>
+            </div>
+        </div>
+        
+        <!-- Vehicle Stats Section (Only visible in vehicle) -->
+        <div class="status-hub-section vehicle-stats" id="vehicle-stats">
+            <!-- Seatbelt -->
+            <div class="status-item" id="seatbelt-status">
+                <i class="fas fa-car-alt"></i>
+                <span class="status-value">TẮT</span>
+            </div>
+
+            
+            <!-- Speed -->
+            <div class="status-item" id="speed-status">
+                <i class="fas fa-tachometer-alt"></i>
+                <span class="status-value">0</span>
+                <span class="unit"></span>
+            </div>
+            
+            <!-- Fuel -->
+            <div class="status-item" id="fuel-status">
+                <i class="fas fa-gas-pump"></i>
+                <span class="status-value">0%</span>
+            </div>
+            
+            <!-- Engine Health -->
+            <div class="status-item" id="engine-health">
+                <i class="fas fa-cogs"></i>
+                <span class="status-value">100%</span>
+            </div>
+            
+            <!-- Body Health -->
+            <div class="status-item" id="body-health">
+                <i class="fas fa-car"></i>
+                <span class="status-value">100%</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Controls Guide -->
+    <div class="controls-guide">
+        <div class="guide-item">
+            <div class="key-button">TAB</div>
+            <div class="key-action">mở kho đồ</div>
+        </div>
+        
+        <div class="guide-item">
+            <div class="key-button">F1</div>
+            <div class="key-action">điện thoại</div>
+        </div>
+        
+        <div class="guide-item">
+            <div class="key-button">F3</div>
+            <div class="key-action">hành động</div>
+        </div>
+        
+        <div class="guide-item">
+            <div class="key-button">F4</div>
+            <div class="key-action">ping job</div>
+        </div>
+        
+        <div class="guide-item">
+            <div class="key-button">G</div>
+            <div class="key-action">giây an toàn</div>
+        </div>
+        
+        <div class="guide-item">
+            <div class="key-button">Z</div>
+            <div class="key-action">cấp độ</div>
+        </div>
+    </div>
+</body>
+</html> 
