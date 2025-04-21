@@ -199,32 +199,28 @@
   right: 2px;
   width: 8px;
   height: 8px;
-  background-color: #00ff00;
   border-radius: 50%;
-  animation: pulse 1.5s infinite;
+  background: #7CFC00;
 }
-
 .job-count .count-info {
   display: flex;
   flex-direction: column;
 }
-
 .job-count .count-info .count-number {
-  font-size: 16px;
   font-weight: 700;
+  font-size: 18px;
+  color: white;
 }
-
 .job-count .count-info .job-label {
   font-size: 12px;
-  color: rgba(255, 255, 255, 0.7);
+  opacity: 0.8;
+  color: white;
 }
-
 .job-count.offline .pulse-dot {
-  background-color: #ff0000;
+  background: #FF6347;
 }
-
 .job-count.offline .count-number {
-  color: #ff0000;
+  opacity: 0.5;
 }
 
 .status-hub-container {
@@ -234,97 +230,86 @@
   transform: translateX(-50%);
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  width: auto;
-  max-width: 100%;
-  z-index: 100;
+  align-items: center;
+  gap: 5px;
+  z-index: 90;
+  background: transparent !important;
 }
 
 .status-hub-section {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 10px;
-  flex-wrap: wrap;
-  backdrop-filter: blur(5px);
+  background: rgba(0, 0, 0, 0.3) !important;
+  border-radius: 8px;
+  padding: 5px 10px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .status-item {
   display: flex;
   align-items: center;
-  justify-content: center;
-  min-width: 55px;
-  padding: 5px 10px;
-  border-radius: 5px;
-  background: rgba(0, 0, 0, 0.6);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  transition: all 0.3s ease;
+  margin: 0 12px;
+  position: relative;
+  min-width: 40px;
+  padding: 5px 0;
+  background: transparent !important;
 }
-
 .status-item i {
-  margin-right: 5px;
-  font-size: 14px;
-  color: white;
+  font-size: 18px;
+  margin-right: 10px;
+  width: 20px;
+  text-align: center;
 }
-
 .status-item i.fa-heart {
-  color: #ff0000;
+  color: #FF6347;
 }
-
 .status-item i.fa-tint {
   color: #4169E1;
 }
-
 .status-item i.fa-shield-alt {
   color: #7CFC00;
 }
-
 .status-item i.fa-bolt {
   color: #FFD700;
 }
-
 .status-item .status-value, .status-item .status-text {
   font-size: 14px;
   font-weight: 700;
   color: white;
+  min-width: 30px;
   text-align: center;
-  text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-  letter-spacing: 0.5px;
+  padding: 2px 5px;
+  border-radius: 15px;
+  background: transparent !important;
 }
-
 .status-item .status-text {
-  font-size: 12px;
-  font-weight: 500;
-  max-width: 100px;
-  white-space: nowrap;
+  max-width: 80px;
   overflow: hidden;
   text-overflow: ellipsis;
+  white-space: nowrap;
+  padding: 2px 8px;
 }
-
 .status-item .unit {
   font-size: 10px;
-  margin-left: 2px;
-  color: rgba(255, 255, 255, 0.7);
+  color: white;
+  margin-left: 3px;
 }
-
 .status-item.low i {
   color: #ffa500;
 }
-
 .status-item.critical i, .status-item.critical .status-value {
   color: #ff0000;
   animation: pulse 1s infinite;
 }
 
 .vehicle-stats {
-  display: none;
-  position: fixed;
-  bottom: 60px;
-  left: 50%;
-  transform: translateX(-50%);
-  flex-direction: row;
-  gap: 10px;
-  z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 5px 10px;
+    border-radius: 8px;
+    background: rgba(0, 0, 0, 0.3) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .vehicle-stats.active {
@@ -334,38 +319,38 @@
 .vehicle-stats .status-hub-section {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 10px;
-  background: rgba(0, 0, 0, 0.5);
-  border-radius: 5px;
-  padding: 5px;
+  background: rgba(0, 0, 0, 0.3) !important;
+  border-radius: 8px;
+  padding: 5px 10px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .vehicle-stats .status-item {
   display: flex;
   align-items: center;
-  justify-content: center;
-  min-width: 50px;
-  padding: 3px 8px;
-  border-radius: 5px;
-  background: rgba(0, 0, 0, 0.4);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  margin: 0 12px;
+  position: relative;
+  min-width: 40px;
+  padding: 5px 0;
+  background: transparent !important;
 }
 
 .vehicle-stats .status-item i {
-  margin-right: 5px;
-  font-size: 12px;
-  color: white;
-  text-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
+  font-size: 18px;
+  margin-right: 10px;
+  width: 20px;
+  text-align: center;
 }
 
 .vehicle-stats .status-item .status-value {
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 700;
   color: white;
+  min-width: 30px;
   text-align: center;
-  text-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
-  letter-spacing: 0.5px;
+  padding: 2px 5px;
+  border-radius: 15px;
+  background: transparent !important;
 }
 
 .controls-guide {
@@ -375,218 +360,218 @@
   transform: translateY(-50%);
   display: flex;
   flex-direction: column;
-  gap: 5px;
-  background: rgba(0, 0, 0, 0.5);
-  border-radius: 5px;
-  padding: 10px;
-  z-index: 100;
-  backdrop-filter: blur(5px);
+  gap: 10px;
+  z-index: 90;
+  width: 180px;
+  background: transparent !important;
 }
 
 .guide-item {
   display: flex;
   align-items: center;
-  margin-bottom: 5px;
+  gap: 10px;
+  background: transparent !important;
 }
-
 .guide-item .key-button {
-  background-color: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  padding: 3px 8px;
-  border-radius: 4px;
-  font-size: 12px;
-  font-weight: 700;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  background: rgba(0, 0, 0, 0.3) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  font-weight: 500;
   color: white;
-  min-width: 30px;
-  text-align: center;
-  margin-right: 8px;
 }
-
 .guide-item .key-action {
-  font-size: 12px;
-  color: white;
-  text-transform: lowercase;
+  font-size: 14px;
+  opacity: 0.8;
+  color: rgb(255, 255, 255);
 }
 
 @media (max-height: 600px) {
   .controls-guide {
-    top: unset;
-    bottom: 20px;
-    transform: none;
+    transform: translateY(-50%) scale(0.9);
+    transform-origin: left center;
   }
 }
 
 @media (max-width: 768px) {
   .status-hub-section {
-    gap: 5px;
+    padding: 6px 15px;
   }
   .status-item {
-    padding: 3px 6px;
+    margin: 0 8px;
   }
   .status-value, .status-text {
     font-size: 12px;
   }
 }
 
-@keyframes pulse {
-  0% { opacity: 1; }
-  50% { opacity: 0.5; }
-  100% { opacity: 1; }
-}
 
 #speed-status i {
-  color: #00ff00;
+    color: #00ff00; 
 }
 
 #fuel-status i {
-  color: #ffa500;
+    color: #ffa500; 
 }
 
 #engine-health i {
-  color: #ff0000;
+    color: #ff0000; 
 }
 
 #body-health i {
-  color: #4169e1;
+    color: #4169e1; 
+}
+
+@keyframes pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1; }
 }
 
 #player-id i {
-  color: #FFD700;
+    color: #FFD700; 
 }
 
 #food-status i {
-  color: #FF6347;
+    color: #FF6347; 
 }
 
 #water-status i {
-  color: #4169E1;
+    color: #4169E1; 
 }
 
 #armor-status i {
-  color: #7CFC00;
+    color: #7CFC00; 
 }
 
 #ammo-status i {
-  color: #FF0000;
+    color: #FF0000; 
 }
 
 #speed-status i {
-  color: #00ff00;
+    color: #00ff00; 
 }
 
 #fuel-status i {
-  color: #ffa500;
+    color: #ffa500; 
 }
 
 #engine-health i {
-  color: #ff0000;
+    color: #ff0000; 
 }
 
 #body-health i {
-  color: #4169e1;
+    color: #4169e1; 
 }
 
 #seatbelt-status i {
-  color: #ffff00;
+    color: #ffff00; 
 }
 
 #seatbelt-status.on .status-value {
-  color: #00ff00;
+    color: #00ff00; 
 }
 
 #seatbelt-status.off .status-value {
-  color: #ff0000;
+    color: #ff0000; 
 }
 
 .status-item.low i {
-  color: #ffa500;
+    color: #ffa500; 
 }
 
 .status-item.critical i, .status-item.critical .status-value {
-  color: #ff0000;
+    color: #ff0000; 
+    animation: pulse 1s infinite;
 }
 
 @keyframes pulse {
-  0% { opacity: 1; }
-  50% { opacity: 0.5; }
-  100% { opacity: 1; }
+    0% { opacity: 1; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1; }
 }
 
 .hud-line .line-icon {
-  color: #FFD700;
+    color: #FFD700; 
 }
 
 .player-info .line-icon {
-  color: #4169E1;
+    color: #4169E1; 
 }
 
 .money-line .line-icon {
-  color: #7CFC00;
+    color: #7CFC00; 
 }
 
 #black-money .line-icon {
-  color: #FF0000;
+    color: #FF0000; 
 }
 
 .job-icon i {
-  color: #FF6347;
+    color: #FF6347; 
 }
 
 .job-count .job-icon i {
-  color: #FFD700;
+    color: #FFD700; 
 }
 
 .job-count.police .job-icon i {
-  color: #4169E1;
+    color: #4169E1; 
 }
 
 .job-count.medic .job-icon i {
-  color: #FF6347;
+    color: #FF6347; 
 }
 
 .job-count.mechanic .job-icon i {
-  color: #FFD700;
+    color: #FFD700; 
 }
 
+
 .time-date-box {
-  position: fixed;
-  top: 10px;
-  left: 20px;
   display: flex;
   align-items: center;
-  gap: 10px;
-  background: rgba(0, 0, 0, 0.5);
-  padding: 8px 15px;
+  padding: 5px 10px;
+  background: rgba(0, 0, 0, 0.7);
   border-radius: 5px;
+  margin: 5px;
+  color: #fff;
+  font-family: 'Chakra Petch', sans-serif;
 }
 
 .time-date-box .time,
 .time-date-box .date {
-  font-size: 16px;
-  font-weight: 700;
-  color: white;
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
 }
 
 .time-date-box i {
-  font-size: 18px;
-  color: #FFD700;
+  margin-right: 5px;
+  color: #fff;
 }
 
 .time-date-box span {
-  font-size: 12px;
-  color: rgba(255, 255, 255, 0.7);
-}
+  font-size: 0.9em;
+  font-weight: 500;
+} 
 
 .job-count.time {
-  border-color: #FFD700;
+  background: rgba(0, 0, 0, 0.7);
 }
 
 .job-count.time .count-info {
   display: flex;
-  flex-direction: row;
-  gap: 10px;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .job-count.time .count-number {
-  font-weight: 700;
+  font-size: 0.9em;
+  color: #fff;
+  margin: 1px 0;
 }
